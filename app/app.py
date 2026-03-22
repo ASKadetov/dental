@@ -8,7 +8,11 @@ app.secret_key = "secret"
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-GOOGLE_DOC_URL = "https://docs.google.com/document/d/1PL-zdFlLb-MkSX5A8a7n34v3_O7Btsbp/edit?usp=sharing&ouid=115948205042641805739&rtpof=true&sd=true"
+GOOGLE_DOC_URL = "https://docs.google.com/document/d/1dyooE_Kcp7Lupr7IONs_FLKXEcW0lqU2/edit?rtpof=true&sd=true&tab=t.0"
+
+@app.context_processor
+def inject_globals():
+    return dict(GOOGLE_DOC_URL=GOOGLE_DOC_URL)
 
 @app.route("/")
 def home():
@@ -21,14 +25,6 @@ def about():
 @app.route("/services")
 def services():
     return render_template("services.html")
-
-@app.route("/price")
-def price():
-    return render_template("price.html")
-
-@app.route("/price-file")
-def price_redirect():
-    return redirect(GOOGLE_DOC_URL)
 
 @app.route("/contacts", methods=["GET", "POST"])
 def contacts():
