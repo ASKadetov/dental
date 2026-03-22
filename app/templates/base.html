@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Smile LAB</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="top-bar">
+    <div class="logo">
+        <span class="logo-dark">New Smile</span>
+        <span class="logo-blue">LAB.</span>
+    </div>
+
+    <nav class="nav">
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">ГЛАВНАЯ</a>
+        <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">О НАС</a>
+        <a href="/services" class="nav-link {% if request.path == '/services' %}active{% endif %}">УСЛУГИ</a>
+        <a href="/price" class="nav-link {% if request.path == '/price' %}active{% endif %}">ПРАЙС</a>
+        <a href="/contacts" class="nav-link {% if request.path == '/contacts' %}active{% endif %}">КОНТАКТЫ</a>
+    </nav>
+</header>
+
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

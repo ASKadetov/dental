@@ -1,40 +1,282 @@
-body {
-    margin: 0;
-    height: 100vh;
+/* верхняя панель */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 60px; /* добавили отступы по краям */
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 600; /* чуть мягче чем bold */
+    letter-spacing: 1px; /* лёгкий разряд */
+}
+
+.logo-dark {
+    color: rgb(34, 40, 49);
+}
+
+.logo-blue {
+    color: rgb(76, 140, 228);
+}
+
+/* меню */
+.nav {
+    display: flex;
+    gap: 30px; /* увеличили расстояние */
+    margin-right: 40px; /* чтобы не уезжало за экран */
+}
+
+/* ссылки */
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(34, 40, 49);
+    transition: 0.2s;
+}
+
+/* активная страница */
+.nav-link.active {
+    color: rgb(76, 140, 228);
+}
+
+/* hover эффект */
+.nav-link:hover {
+    color: rgb(76, 140, 228);
+}
+
+.hero {
+    height: calc(100vh - 60px);
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/index.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 32px;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: rgb(76, 140, 228);
+    color: white;
+
+    padding: 15px 30px;
+    border-radius: 30px; /* закругление */
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+/* hover эффект */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.white-page {
+    background: white;
+    padding: 120px 60px 60px;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.about-img {
+    width: 400px;
+    border-radius: 12px;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgb(34, 40, 49);
+}
+
+.about-text-center {
+    text-align: center;
+    font-size: 18px;
+    margin: 30px auto;
+    max-width: 800px;
+    color: rgb(34, 40, 49);
+}
+
+.about-center-image {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.about-center-image img {
+    width: 500px;
+    border-radius: 12px;
+}
+
+.about-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.price-page {
+    height: calc(100vh - 60px); /* учитываем header */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+    text-align: center;
+}
+
+.price-title {
+    font-size: 32px;
+    color: rgb(34, 40, 49);
+    margin-bottom: 30px;
+}
+
+.contacts-page {
+    height: calc(100vh - 60px);
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    gap: 80px;
 
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url("background.jpg");
-    background-size: cover;
-    background-position: center;
+    background: white;
+    padding: 0 60px;
 }
 
-.center-box, .form-box {
+.contacts-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 25px;
+    color: rgb(34, 40, 49);
+}
+
+.contact-item img {
+    width: 28px;
+    height: 28px;
+}
+
+.contacts-right {
+    width: 420px;
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: rgba(255,255,255,0.15);
-    padding: 40px;
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
 }
 
-textarea {
+.contact-form textarea {
+    height: 120px;
     resize: none;
-    height: 100px;
 }
 
-input, textarea, button {
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
-button {
-    background: #2c7be5;
+.service-section {
+    padding: 100px 60px;
+}
+
+.service-section.light {
+    background: white;
+    color: rgb(34, 40, 49);
+}
+
+.service-section.dark {
+    background: rgb(34, 40, 49);
     color: white;
-    cursor: pointer;
+}
+
+.service-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.service-text h2 {
+    font-size: 28px;
+}
+
+.service-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-images img {
+    width: 300px;
+    border-radius: 12px;
+}
+
+.service-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-subtext {
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.service-section.dark .service-subtext {
+    color: rgba(255,255,255,0.8);
 }

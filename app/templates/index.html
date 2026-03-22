@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Главная</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-<div class="center-box">
-    <a href="/contacts" class="btn">Связаться с нами</a>
-    <a href="/prices" class="btn">Узнать цены</a>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+
+    <h1 class="hero-title">
+        Добро пожаловать в мир цифровых технологий в стоматологии!
+    </h1>
+
+    <div class="hero-buttons">
+        <a href="/contacts" class="btn-primary">СВЯЗАТЬСЯ С НАМИ</a>
+        <a href="/price" class="btn-primary">УЗНАТЬ ЦЕНЫ</a>
+    </div>
+
 </div>
-</body>
-</html>
+{% endblock %}

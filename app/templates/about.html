@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="white-page">
+
+    <!-- Блок 1: картинка слева, текст справа -->
+    <div class="about-row">
+        <img src="/static/images/about.jpg" class="about-img">
+
+        <div class="about-text">
+            <p>
+                New Smile LAB. - это передовая студия дентального 3D дизайна. 
+                Мы знаем все о том, как создать идеальную улыбку.
+                С самого основания, наша цель выражается в стремлении - сделать безметалловую керамику не только красивой и функциональной,
+                но также доступной.
+            </p>
+        </div>
+    </div>
+
+    <!-- Блок 2: текст -->
+    <p class="about-text-center">
+        Мы используем высококачественные материалы во всех наших реставрациях:
+    </p>
+
+    <!-- Блок 3: картинка -->
+    <div class="about-center-image">
+        <img src="/static/images/about2.jpg">
+    </div>
+
+    <!-- Блок 4: текст -->
+    <p class="about-text-center">
+        New Smile LAB. предоставляет свои услуги не только местным 
+        организациям, но и стоматологиям и лабораториям других регионов, 
+        отправляя работы логистическими компаниями: СДЕК, Деловые линии и др.
+    </p>
+
+    <!-- Кнопки -->
+    <div class="about-buttons">
+        <a href="/contacts" class="btn-primary">СВЯЗАТЬСЯ С НАМИ</a>
+        <a href="/price" class="btn-primary">УЗНАТЬ ЦЕНЫ</a>
+    </div>
+
+</div>
+{% endblock %}
